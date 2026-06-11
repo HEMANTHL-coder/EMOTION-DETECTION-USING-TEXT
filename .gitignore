@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.venv/
+__pypackages__/
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Model artifacts
+model/*.pkl
+
+# Generated datasets
+data/generated_dataset.csv
+
+# Legacy project directory (empty / leftover)
+project/
+
+# OS files
+.DS_Store
+Thumbs.db
