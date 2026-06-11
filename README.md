@@ -1,23 +1,19 @@
-<<<<<<< HEAD
-# EMOTION-DETECTION-USING-TEXT
-NLP-based Emotion Detection using Machine Learning and Streamlit
-=======
 # Emotion Detection Using Text
 
-A polished, production-style emotion detection repository using classical NLP and machine learning. This project trains an emotion classifier from text and exposes a Streamlit web app for instant predictions.
+A professional NLP project for emotion classification using a classical machine learning pipeline and Streamlit deployment.
 
 ## Overview
 
-This repository contains a text emotion classification pipeline that trains a TF-IDF + scikit-learn model on emotion-labeled text data. The project is designed to be portfolio-ready and easy to run from the repository root.
+This repository demonstrates a complete text-based emotion detection workflow. It includes dataset preprocessing, model training, and a Streamlit UI for live inference.
 
 ## Features
 
-- ✅ Clean dataset preprocessing pipeline
-- ✅ TF-IDF vectorization with classical classifiers
-- ✅ Model comparison between Logistic Regression and LinearSVC
-- ✅ Streamlit user interface for live emotion detection
-- ✅ Support for both real dataset and optional synthetic dataset generation
-- ✅ Model saved as a reusable pickle pipeline
+- Clean, reproducible text preprocessing
+- TF-IDF feature extraction
+- Model comparison between `LogisticRegression` and `LinearSVC`
+- Streamlit web app for predictions
+- Saved model pipeline in `model/emotion_pipeline.pkl`
+- Optional synthetic dataset generation
 
 ## Technologies Used
 
@@ -31,18 +27,19 @@ This repository contains a text emotion classification pipeline that trains a TF
 ## Machine Learning Workflow
 
 1. Load the dataset from `data/emotion_dataset.csv`
-2. Clean and normalize text
-3. Remove duplicates and invalid data
-4. Train a TF-IDF + classifier pipeline
-5. Compare model performance and select the best model
-6. Save the best model to `model/emotion_pipeline.pkl`
+2. Detect text and emotion columns automatically
+3. Clean and normalize raw text
+4. Remove duplicate and invalid samples
+5. Train TF-IDF + classifier pipeline
+6. Evaluate using train/test split and cross-validation
+7. Save the best model as a pickled pipeline
 
 ## Dataset Information
 
 - Primary dataset: `data/emotion_dataset.csv`
-- Available emotions in the supplied dataset: 14 classes
-- Optional synthetic dataset: `data/generated_dataset.csv`
-- Use `src/dataset_generator.py` to generate extended emotion data
+- Contains emotion-labeled text samples
+- Optional generated dataset: `data/generated_dataset.csv`
+- Synthetic dataset generator available in `src/dataset_generator.py`
 
 ## Installation
 
@@ -66,7 +63,7 @@ python src/train_model.py
 streamlit run src/app.py
 ```
 
-### Generate a synthetic dataset (optional)
+### Generate synthetic data (optional)
 
 ```bash
 python src/dataset_generator.py
@@ -96,21 +93,21 @@ EMOTION-DETECTION-USING-TEXT/
 
 ## Screenshots
 
-- `assets/ui_screenshot.png` - Streamlit UI placeholder
-- `assets/prediction_screenshot.png` - Sample prediction placeholder
+- `assets/ui_screenshot.png` — Streamlit app interface
+- `assets/prediction_screenshot.png` — Example prediction output
 
 ## Future Enhancements
 
-- Expand the dataset with more real-world examples
-- Move to transformer embeddings for improved accuracy
-- Add API endpoints for production deployment
-- Improve text preprocessing with lemmatization and entity handling
-- Add explainable AI support for model transparency
+- Add transformer-based embeddings for improved accuracy
+- Add more real-world emotion data and label coverage
+- Improve preprocessing with lemmatization and stopword tuning
+- Add API deployment support
+- Add model explainability and confidence visualization
 
 ## Author
 
 **HEMANTHL-coder**
 
 - GitHub: https://github.com/HEMANTHL-coder/EMOTION-DETECTION-USING-TEXT
-- Email: [Add your email here]
->>>>>>> d79e981 (Prepare emotion detection project for GitHub portfolio)
+- Email: hemanthlpujar95-star@example.com
+
