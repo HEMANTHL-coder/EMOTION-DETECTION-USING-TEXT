@@ -51,6 +51,29 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Deploy on Render / Streamlit Cloud
+
+This project is ready for Streamlit-based hosting.
+
+1. Create a Python 3.11 environment.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Start the app:
+   ```bash
+   streamlit run src/app.py
+   ```
+
+For Render, use the included `Procfile` and `runtime.txt`.
+For Streamlit Cloud, point the app to `src/app.py`.
+
+## Deployment Files
+
+- `Procfile` — starts the Streamlit server on the hosting platform
+- `runtime.txt` — pins the Python runtime
+- `render.yaml` — optional Render deployment configuration
+
 ### Train the model
 
 ```bash

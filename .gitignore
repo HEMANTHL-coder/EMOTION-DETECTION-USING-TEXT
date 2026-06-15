@@ -17,6 +17,7 @@ __pypackages__/
 
 # Model artifacts
 model/*.pkl
+!model/emotion_pipeline.pkl
 
 # Generated datasets
 data/generated_dataset.csv
