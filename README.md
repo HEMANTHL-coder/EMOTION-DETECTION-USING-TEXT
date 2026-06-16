@@ -133,4 +133,4 @@ EMOTION-DETECTION-USING-TEXT/
 
 - GitHub: https://github.com/HEMANTHL-coder/EMOTION-DETECTION-USING-TEXT
 - Email: hemanthlpujar95@gmail.com
-LIVE DEMO LINK : https://emotion-detection-using-text-oqefv8hnygd72qqurxfzcc.streamlit.app/
+- LIVE DEMO LINK : https://emotion-detection-using-text-oqefv8hnygd72qqurxfzcc.streamlit.app/
