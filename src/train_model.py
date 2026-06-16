@@ -67,21 +67,42 @@ def detect_columns(df: pd.DataFrame) -> tuple[str, str]:
     return text_col, label_col
 
 
+def normalize_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    """Normalize dataset columns to a common text/emotion schema."""
+    text_col, label_col = detect_columns(df)
+    df = df.rename(columns={text_col: "text", label_col: "emotion"})
+    return df[["text", "emotion"]]
+
+
 def load_data() -> pd.DataFrame:
-    """Load the dataset from the configured data path."""
+    """Load the dataset from configured data paths and merge available sources."""
+    available_paths = []
     if DATA_PATH.exists():
-        path = DATA_PATH
-    elif FALLBACK_PATH.exists():
-        path = FALLBACK_PATH
-        print(f"⚠️  Primary dataset not found. Falling back to {FALLBACK_PATH}")
+        available_paths.append(DATA_PATH)
     else:
+        print(f"⚠️  Primary dataset not found at {DATA_PATH}")
+
+    if FALLBACK_PATH.exists():
+        available_paths.append(FALLBACK_PATH)
+
+    if not available_paths:
         raise FileNotFoundError(
             f"Could not find dataset at {DATA_PATH} or {FALLBACK_PATH}."
         )
 
-    df = pd.read_csv(path)
-    print(f"📂 Loaded {len(df)} samples from {path}")
-    return df
+    data_frames = []
+    for path in available_paths:
+        df = pd.read_csv(path)
+        df = normalize_dataset(df)
+        print(f"Loaded {len(df)} samples from {path}")
+        data_frames.append(df)
+
+    if len(data_frames) > 1:
+        combined = pd.concat(data_frames, ignore_index=True)
+        print(f"Combined dataset size: {len(combined)} samples")
+        return combined
+
+    return data_frames[0]
 
 
 def preprocess_data(df: pd.DataFrame) -> tuple[pd.DataFrame, str, str]:
